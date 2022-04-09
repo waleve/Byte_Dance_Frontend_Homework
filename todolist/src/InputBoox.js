@@ -19,7 +19,7 @@ export function InputBoox(){
         const saved = localStorage.getItem("lists");
         const initialValue = JSON.parse(saved);
         console.log("saved");
-        return initialValue || "";
+        return initialValue || [];
     })
 
     // const [edit,setEdit] = useState(()=>{
