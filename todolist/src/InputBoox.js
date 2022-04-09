@@ -48,6 +48,10 @@ export function InputBoox(){
         Setcount(count-1);
     }
 
+    const clear = ()=>{
+        setList([]);
+        Setcount(0);
+    }
 
     // const showEdit = (e,index)=>{
     //     setEdit(()=>{
@@ -66,34 +70,67 @@ export function InputBoox(){
     //     })
     // }
     return(
-        <div className="todobody">
-            <form onSubmit={handleAddClick}>
-                <input className="todoInput"  placeholder={"请输入要做事项"} type={"text"}
-                       onChange={(e)=> Setmessage(e.target.value)}
-                       value={message}/>
-                <button>添加</button>
-            </form>
-            <ul>
-                {lists.map(function (item, index)
-                {
-                    let tmp = item;
-                    // if (tmp.show === true)
-                    //     if(edit[index].show){
-                    //         tmp = (
-                    //             <form onSubmit={()=>save(index)}>
-                    //                 <input className="todoInput" type={"text"}
-                    //                        onChange={(e)=>setEdit(edit[index].text = e.target.value)}
-                    //                        value={edit[index].text}/>
-                    //             </form>
-                    //         );
-                    //         return <div className="todoitem">{tmp}</div>
-                    //     }
-                            return <div className="todoitem">
-                                <button onClick={(e)=> deleteItem(index)}  />
-                                {tmp.text}</div>;
-                    },this)}
-                共有{count}件事情待做
-            </ul>
+        <div className="all">
+            <section className="todoapp">
+                <div className="header">
+                    <form onSubmit={handleAddClick}>
+                        <input className="new-todo"  placeholder={"请输入要做事项"} type={"text"}
+                               onChange={(e)=> Setmessage(e.target.value)}
+                               value={message}/>
+                    </form>
+                </div>
+                <section className="main">
+                    {/*<input type="checkbox" id="toggle-all" className="toggle-all" />*/}
+                    {/*<label htmlFor="toggle-all" >*/}
+                    {/*    ::before*/}
+                    {/*</label>*/}
+                    <ul className="todo-list">
+                        {lists.map(function (item, index)
+                        {
+                            let tmp = item;
+                            // if (tmp.show === true)
+                            //     if(edit[index].show){
+                            //         tmp = (
+                            //             <form onSubmit={()=>save(index)}>
+                            //                 <input className="todoInput" type={"text"}
+                            //                        onChange={(e)=>setEdit(edit[index].text = e.target.value)}
+                            //                        value={edit[index].text}/>
+                            //             </form>
+                            //         );
+                            //         return <div className="todoitem">{tmp}</div>
+                            //     }
+                            return <li>
+                                <div>
+                                    {/*<input*/}
+                                    {/*    type="checkbox"*/}
+                                    {/*    id={`box${index}`}*/}
+                                    {/*    onClick={(e)=>deleteItem(index)}*/}
+                                    {/*/>*/}
+                                    {/*<button onClick={(e)=> deleteItem(index)}  />*/}
+                                    <label>
+                                        {tmp.text}
+                                    </label>
+                                    <button
+                                        className="destroy"
+                                        onClick={(e)=>deleteItem(index)}/>
+                                </div>
+                            </li>
+                        },this)}
+                    </ul>
+                </section>
+                <footer className="footer">
+                    <span className="todo-count">
+                        共有{count}件事情待做
+                    </span>
+                    <ul className="filters">
+                        <li>
+                            <a href='#' onClick={clear}>clear all</a>
+                        </li>
+
+                    </ul>
+                </footer>
+            </section>
+
         </div>
     )
 }
