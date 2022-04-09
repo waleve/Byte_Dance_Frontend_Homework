@@ -40,6 +40,7 @@ export function InputBoox(){
             return
         setList([...lists, {text: message,done: false,show: true,edit:false}]);
         Setcount(count+1);
+        Setmessage("");
     }       //这个不太明白，为什么需要设置为const
 
     const deleteItem = (e) => {
@@ -53,22 +54,6 @@ export function InputBoox(){
         Setcount(0);
     }
 
-    // const showEdit = (e,index)=>{
-    //     setEdit(()=>{
-    //         edit[index].show = true;
-    //     })
-    // }
-    // const save = (index) => {
-    //     setEdit(()=>{
-    //         edit[index].show = false;
-    //     })
-    //     console.log("in save")
-    //     console.log(edit)
-    //     setList(()=>{
-    //         lists[index].edit = false;
-    //         lists[index].text = edit[index].text;
-    //     })
-    // }
     return(
         <div className="all">
             <section className="todoapp">
