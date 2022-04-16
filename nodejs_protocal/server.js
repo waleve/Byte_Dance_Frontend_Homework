@@ -30,7 +30,7 @@ server.on('connection', socket => {
             buffer = buffer.slice(packageLength); // 删除已经取出的数据包，这里采用的方法是把缓冲区（buffer）已取出的包给截取掉
     
             const result = transcoder.decode(package); // 解码
-            console.log(result);
+            console.log(result.body);
         }
     
         overBuffer=buffer; // 记录剩余不完整的包
