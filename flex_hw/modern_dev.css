@@ -1,0 +1,59 @@
+#_docusaurus
+{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.navbar__items {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    min-width: 0;
+}
+.navbar__item {
+    display: inline-block;
+    padding: var(--ifm-navbar-item-padding-vertical) var(--ifm-navbar-item-padding-horizontal);
+}
+
+.navbar__link {
+    font-weight: var(--ifm-font-weight-semibold);
+ }
+
+.navbar__logo {
+    flex: 0 0 auto;
+    margin-right: 0.5rem;
+}
+
+.navbar__brand {
+    align-items: center;
+    display: flex;
+    margin-right: 1rem;
+    min-width: 0;
+}
+
+.navbar__items--right {
+    flex: 0 0 auto;
+    justify-content: flex-end;
+}
+
+.navbar__search {
+    position: relative;
+}
+
+.navbar__search-input {
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 4px;
+    outline: 0;
+}
+.searchBarContainer_roih {
+    margin-left: 16px;
+}
+
+@media (max-width:996px) {
+    .navbar__item{
+        display: none;
+}
+    
+    
+}
