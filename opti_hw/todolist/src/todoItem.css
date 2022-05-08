@@ -1,0 +1,14 @@
+.todoitem{
+    text-align: left;
+    width: 100%;
+}
+
+.todobody{
+    width: 50%;
+    margin-top:10%;
+    margin-left: 25%;
+}
+
+.todoInput{
+    width: 80%;
+}
